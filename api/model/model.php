@@ -43,25 +43,31 @@ class Model {
     }
 
 
+
     private function createTables() {
-        // En la variable sql se coloca el su codigo de creacion de tablas
-        $sql = "CREATE TABLE IF NOT EXISTS `jugador` (
-                `id` int(11) NOT NULL AUTO_INCREMENT,
-                `nombre` text NOT NULL,
-                `apellido` text NOT NULL,
-                `club` text NOT NULL,
-                `representante_id` int(11) NOT NULL
-                PRIMARY KEY (`id`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-                
-                CREATE TABLE IF NOT EXISTS `representante` (
-                    `id` int(11) NOT NULL AUTO_INCREMENT,
-                    `nombre` text NOT NULL,
-                    `apellido` text NOT NULL,
-                    `contacto` text NOT NULL
-                PRIMARY KEY (`id`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;";
+       // En la variable sql se coloca el su codigo de creacion de tablas
+       $sql = "CREATE TABLE IF NOT EXISTS `jugador` (
+        `id` int(11) NOT NULL,
+        `nombre` text NOT NULL,
+        `apellido` text NOT NULL,
+        `club` text NOT NULL,
+        `representante_id` int(11) NOT NULL,
+        PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
         
-        $this->conexion->query($sql);
+        );
+        
+        CREATE TABLE IF NOT EXISTS `representante` (
+            `id` int(11) NOT NULL,
+            `nombre` text NOT NULL,
+            `apellido` text NOT NULL,
+            `contacto` text NOT NULL
+        PRIMARY KEY (`id`)
+        );";
+
+$this->conexion->query($sql);
+        
+
     }
 }

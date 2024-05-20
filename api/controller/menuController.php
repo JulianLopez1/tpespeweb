@@ -1,19 +1,20 @@
 <?php
- require_once 'model/taskModel.php';
- require_once "view/jugadorView.php";
+ require_once 'api/model/model.php';
+//  require_once "view/jugadorView.php";
 
-class menuController{
+class MenuController{
 
     private $model;
-    private $view;
-    private $err;
+    // private $view;
+    // private $err;
     public function __construct()
     {
-        $this->model = new TaskModel();
-        $this->view = new jugadorView();
+        $this->model = new Model();
+        // $this->view = new jugadorView();
     }
     function showTasks(){
-        $tareas = $this->model->getAll();
-        $this->view->showTasks($tareas);
+        echo 'sdffdsfsd0';
+        // $tareas = $this->model->getAll();
+        // $this->view->showTasks($tareas);
     }
 }
