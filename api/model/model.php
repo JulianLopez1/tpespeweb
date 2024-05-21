@@ -53,17 +53,16 @@ class Model {
         `club` text NOT NULL,
         `representante_id` int(11) NOT NULL,
         PRIMARY KEY (`id`)
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-        
-        );
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;  
+    
         
         CREATE TABLE IF NOT EXISTS `representante` (
             `id` int(11) NOT NULL,
             `nombre` text NOT NULL,
             `apellido` text NOT NULL,
-            `contacto` text NOT NULL
+            `contacto` text NOT NULL,
         PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
         );";
 
 $this->conexion->query($sql);
